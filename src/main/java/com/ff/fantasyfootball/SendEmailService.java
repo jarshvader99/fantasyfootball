@@ -39,7 +39,7 @@ public class SendEmailService{
 
             protected PasswordAuthentication getPasswordAuthentication() {
 
-                return new PasswordAuthentication("jshdev.fantasyfootball@gmail.com", "COdejava12!@");
+                return new PasswordAuthentication("jshdev.fantasyfootball@gmail.com", "xxx");
 
             }
 
