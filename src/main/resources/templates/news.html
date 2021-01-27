@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fantasy Football</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<ul th:each="news : ${news}">
+	    <li th:text="${news.title}">1</li>
+	</ul> 
+</body>
+</html>

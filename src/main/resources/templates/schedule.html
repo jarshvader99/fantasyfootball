@@ -1,0 +1,27 @@
+<div class="container-fluid" th:fragment="schedule">
+	<h1 class="mt-4"></h1>
+	<ol class="breadcrumb mb-4">
+		<li class="breadcrumb-item "><a href="/">Home</a></li>
+		<li class="breadcrumb-item active">Schedule</li>
+	</ol>
+	<div class="row">
+		<div class="card-body">
+			<div class="table-responsive">
+				<div th:if="${matches != null}">
+					<div th:each="match : ${matches}">
+<!-- 						<span th:each="entrySet : ${entry.value}">  -->
+<!-- 						Week: <span th:text="${match.value.week}"></span><br> -->
+						<div th:each="entry,iterStat : ${matches}" th:class="${iterStat.odd}? 'odd' : 'even'">
+						<span th:text="${entry}"></span><br>
+						<span th:text="${entry.value.week}"></span><br>
+						<span th:text="${iterStat}"></span><br>
+    						
+						</div>
+<!-- 						Visiting Team: <span th:text="${entrySet.visitingTeam.owner_id}"></span><br><br>  -->
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

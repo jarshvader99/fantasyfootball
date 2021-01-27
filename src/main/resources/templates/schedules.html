@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fantasy Football</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<ul th:each="schedule : ${schedules}">
+	    <li th:text="${schedule.date}">1</li>
+	    <li th:text="${schedule.awayTeam}">1</li>
+	    <li th:text="${schedule.homeTeam}">1</li>
+	</ul> 
+</body>
+</html>

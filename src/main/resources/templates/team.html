@@ -1,0 +1,38 @@
+<div class="container-fluid" th:fragment="team">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item "><a href="/myLeagues">League</a></li>
+        <li class="breadcrumb-item "><a th:href="'/leagueDetails/' + ${league_id}"><span th:text="${league_name}"></span></a></li>
+        <li class="breadcrumb-item active">Details</li>
+    </ol>
+	<div class="card-body">
+	    <div class="table-responsive">
+	        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+	            <thead>
+	                <tr>
+	                    <th></th>
+	                    <th></th>
+	                    <th></th>
+	                    <th></th>
+	                </tr>
+	            </thead>
+	            <tbody th:each="player : ${myPlayers}">
+	                <tr>
+	                    <td th:text="${player.position}"></td>
+	                    <td><img th:src="${player.photoUrl}"></td>
+	                    <td th:text="${player.firstName}"></td>
+	                    <td th:text="${player.lastName}"></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	    </div>
+	</div>
+</div>
+<div th:if= "${refresh != null}"></div>
+
+<script th:inline="javascript">
+		
+    console.log( "ready!" );
+
+	
+</script>

@@ -1,0 +1,49 @@
+<div class="container-fluid" th:fragment="playersAll">
+	<h1 class="mt-4">Players</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/">Home</a> ><a href="/players">Players</a> >All</li>
+    </ol>
+    <div class="row">
+	    <div class="card-body">
+		    <div class="table-responsive">
+		        <table class="table table-bordered" id="playerTable" width="100%" cellspacing="0">
+		            <thead>
+		                <tr>
+		                	<th>Photo</th>
+		                	<th>Player Id</th>
+		                    <th>First Name</th>
+		                    <th>Last Name</th>
+		                    <th>Status</th>
+		                    <th>Age</th>
+		                    <th>Bye Week</th>
+		                    <th>Position</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr>
+		                	<td></td>
+		                	<td></td>
+		                	<td></td>
+		                	<td></td>
+		                	<td></td>
+		                	<td></td>
+		                    <td></td>
+		                </tr>
+		            </tbody>
+<!-- 		            <tbody th:each="player : ${players}"> -->
+<!-- 		                <tr> -->
+<!-- 		                	<td><img th:src="${player.photoUrl}"></td> -->
+<!-- 		                	<td th:text="${player.playerID}"></td> -->
+<!-- 		                    <td th:text="${player.firstName}"></td> -->
+<!-- 		                    <td th:text="${player.lastName}"></td> -->
+<!-- 		                    <td th:text="${player.active}"></td> -->
+<!-- 		                    <td th:text="${player.age}"></td> -->
+<!-- 		                    <td th:text="${player.byeWeek}"></td> -->
+<!-- 		                    <td th:text="${player.position}"></td> -->
+<!-- 		                </tr> -->
+<!-- 		            </tbody> -->
+		        </table>
+		    </div>
+		</div>
+    </div>
+</div>

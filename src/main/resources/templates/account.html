@@ -1,0 +1,26 @@
+<div class="container-fluid" th:fragment="account">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+    	<li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Account</li>
+    </ol>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-newspaper mr-1"></i>
+                    Account Info
+                </div>
+                <div class="card-body">
+                	<ul style="list-style-type:none">
+                		<li><strong>Username:</strong> <span th:text="${user.username}"></span></li>
+                		<li><strong>First Name:</strong> <span th:text="${user.first_name}"></span></li>
+                		<li><strong>Last Name:</strong> <span th:text="${user.last_name}"></span></li>
+                		<li><strong>Email:</strong> <span th:text="${user.email}"></span></li>
+                	</ul>
+                </div>	
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+<div class="container-fluid" th:fragment="updateLeague">
+	<h1 class="mt-4">Leagues</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/">Home</a>><a href="/myLeagues">Leagues </a> >Update</li>
+    </ol>	
+	<form action="#" th:object="${updateLeagueForm}" th:action="@{'/updateLeague/' + ${leagueId}}" method="post">
+	    <label>League name:</label>
+		<input type="text" th:field="*{league_name}" th:value="${leagueName}"
+		/><br/>
+		<label>Number of Teams:</label>
+		<select id="num-teams-in-league" name="*{num_teams_in_league}">
+		    <option value="10">10</option>
+		    <option value="11">11</option>
+		    <option value="12">12</option>
+		    <option value="13">13</option>
+		    <option value="14">14</option>
+		    <option value="15">15</option>
+		    <option value="16">16</option>
+		    <option value="17">17</option>
+		    <option value="18">18</option>
+		    <option value="19">19</option>
+		    <option value="20">20</option>
+		</select></br>
+		<label>Scoring Type:</label>
+		<select id="scoring-type" name="*{scoring_type}">
+		    <option value="ppr">Point Per Reception (PPR)</option>
+		    <option value="auc">Auction League</option>
+		    <option value="kep">Keeper League</option>
+		    <option value="dyn">Dynasty League</option>
+		    <option value="idp">Individual Defensive PLayer (IDP)</option>
+		</select></br>
+		<label>Team Location:</label>
+		<input type="text" th:field="*{team_location}" /><br/>
+		<label>Nickname:</label>
+		<input type="text" th:field="*{nick_name}" /><br/>
+		<label>Abbreviation:</label>
+		<input type="text" th:field="*{abbreviation}" /><br/>
+		<label>Team Logo:</label>
+		<input type="text" th:field="*{team_logo}" /><br/>
+		<label>Opt In Emails:</label>
+		<input type="checkbox" th:field="*{opt_in_emails}" /><br/>
+	    <input type="submit" class="btn btn-primary" value="Update" />
+	</form>
+	<a th:href="'/leagueDetails/' + ${leagueId}"><button type="button" class="btn btn-outline-danger">Back</button></a>
+</div>	

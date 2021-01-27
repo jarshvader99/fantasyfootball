@@ -1,0 +1,33 @@
+<div class="container-fluid" th:fragment="invite">
+    <h1 class="mt-4">Invite Members</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/">Home</a>><a href="/myLeagues">Leagues </a> >Invite Members</li>
+    </ol>
+	    <div class="row">
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+					<div>League Id:</div>
+					<span th:text="${league_id}"></span>
+					<div>Invite Code:</div>
+					<span id="invite-code">
+						<input readonly type="text" th:value="${inviteCode}" class="allowCopy noselect" data-toggle="tooltip" title="Click to copy code to clipboard.">
+					</span>
+                </div>
+				<div class="card-body">
+					<form action="#" th:object="${sendInviteEmailForm}" th:action="@{/sendInviteEmail}" method="post">
+						<label>To:</label>
+						<input type="text" th:field="*{to}" /><br/>
+						<label>Message:</label>
+						<input type="text" th:field="*{emailBody}" /><br/>
+						<input type="submit" class="btn btn-primary" value="Send" />
+					</form>
+				</div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<a th:href="'/leagueDetails/' + ${league_id}"><button type="button" class="btn btn-outline-danger">Back</button></a>
+</div>
+

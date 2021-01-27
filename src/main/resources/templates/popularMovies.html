@@ -1,0 +1,47 @@
+<div class="container-fluid" th:fragment="popularMovies">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active">Movies</li>
+    </ol>
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+        	<div th:each="result : ${results}">
+	            <div class="card mb-6" style="margin-bottom:25px;">
+	                <div class="card-header">
+	                	<span th:text="${result.title}">1</span>
+	                </div>
+	                <div class="card-body col-xl-12">
+	                	<div><img th:src="'https://image.tmdb.org/t/p/w500'+ ${result.posterPath}" style="width:100%;"/></div>	
+		                <div style="margin-top:5px;">
+		                	<h3 th:text="${result.title}">1</h3>	
+		                </div>
+		                <div><span th:text="${result.overview}">1</span></div>
+	                </div>
+	                <div class="card-footer">
+	                	<div style="float:left;">
+	                		<a th:class="'dislike-movie-' + ${result.id}" th:onclick="'javascript:dislikeMovie(' + ${result.id} + ');'"><i class="far fa-thumbs-down mr-1"></i></a>	                	
+	                	</div>
+	                	<div style="float:right;">
+	                		<span style="margin-right:10px;"><i class="fas fa-plus"></i></span>
+	                		<a th:class="'like-movie-' + ${result.id}" th:onclick="'javascript:likeMovie(' + ${result.id} + ');'"><i th:id="'like-movie-thumb-' + ${result.id}" class="far fa-thumbs-up mr-1"></i></a>
+	                	</div>
+	                	<div class="clearfix"></div>
+	                	<span id="result-id" th:text="${result.id}"></span>
+	                </div>
+               	</div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+    	<div class="col-md-12" style="width:100%;text-align:center;">
+	    	<a th:href="'/getPopular?page=' + ${popular.page - 1}" style="margin-right:5px;"><i class="fas fa-arrow-left"></i></a>
+	    		<span th:text="${popular.page}">1</span>
+	    			of 
+	    		<span th:text="${popular.totalPages}">500</span>
+	    	<a th:href="'/getPopular?page=' + ${popular.page + 1}"><i class="fas fa-arrow-right" style="margin-left:5px;"></i></a>
+    	</div>
+    </div>
+</div>
+
+

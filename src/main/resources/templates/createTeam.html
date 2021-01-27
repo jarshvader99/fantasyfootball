@@ -1,0 +1,30 @@
+<div class="container-fluid" th:fragment="createTeam">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item "><a href="/">Home</a></li>
+        <li class="breadcrumb-item "><a th:href="'/leagueDetails/' + ${league_id}">League</a></li>
+        <li class="breadcrumb-item active">Create Team</li>
+    </ol>
+	<form action="#" th:object="${addTeamForm}" th:action="@{/addTeam/} + ${league_id}" method="post">
+	    <label>Quarterback:</label>
+		<input type="text" th:field="*{qb1_id}" /><br/>
+		<label>Running Back (1):</label>
+		<input type="text" th:field="*{rb1_id}" /><br/>
+		<label>Running Back (2):</label>
+		<input type="text" th:field="*{rb2_id}" /><br/>
+		<label>Wide Receiver (1):</label>
+		<input type="text" th:field="*{wr1_id}" /><br/>
+		<label>Wide Receiver (2)</label>
+		<input type="text" th:field="*{wr2_id}" /><br/>
+		<label>Tight End:</label>
+		<input type="text" th:field="*{te_id}" /><br/>
+		<label>Flex (RB, WR, TE):</label>
+		<input type="text" th:field="*{flex_id}" /><br/>
+		<label>Defense:</label>
+		<input type="text" th:field="*{defense_id}" /><br/>
+		<label>Kicker:</label>
+		<input type="text" th:field="*{kicker_id}" /><br/>
+	    <input type="submit" value="Add" />
+	</form>
+	<a th:href="'/leagueDetails/' + ${league_id}"><button type="button" class="btn btn-outline-danger">Back</button></a>
+</div>

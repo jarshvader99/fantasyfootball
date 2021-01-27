@@ -1,0 +1,61 @@
+<div class="container-fluid" th:fragment="leagueDetails">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active"><a href="/myLeagues">Leagues </a></li>
+        <li class="breadcrumb-item active"><span th:text="${league.league_name}"></span></li>
+    </ol>
+	    <div class="row">
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+					<div th:each="league : ${league}">
+				    	<div>
+				    		League Name:
+				    		<span th:text="${league.league_name}"></span>
+				    	</div>
+				    	<div>
+				    		Created By:
+				    		<span th:text="${league.created_by_id}"></span>
+				    	</div>
+				    	<div>
+				    		Public League:
+				    		<span th:text="${league.private_league}"></span>
+				    	</div>
+				    	<div>
+				    		Scoring Type:
+				    		<span th:text="${league.scoring_type}"></span>
+				    	</div>
+				    	<div>
+				    		Schedule:
+				    		<span><a th:href="'/viewSchedule/' + ${league.league_id}">Schedule</a></span>
+				    	</div>
+				    	<div>
+				    		<a th:href="'/team/' + ${league.league_id}">My Team</a>
+				    	</div>
+				    	<div th:if="!${leagueFull}">
+				    		<a th:href="'/invite/' + ${league_id}">Invite Members</a>
+				    	</div>
+				    	<div>
+				    		Number of Teams:
+				    		<span th:text="${slottedTeams}"></span> of <span th:text="${league.num_teams_in_league}"></span>
+				    	</div>
+				    	<div>
+				    		<a th:href="'/members/' + ${league.league_id}">Members</a>
+				    	</div>
+				    	<div th:if="${leagueFull}"> 
+						  <p class="alert alert-success" role="alert">Schedule Draft.</p>
+						</div>
+						<div th:if="${leagueFilled == false}"> 
+						  <p class="alert alert-danger" role="alert">Your league must have all team slots occupied in order to draft.</p>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<a th:href="'/updateLeague/' + ${league_id}"><button type="button" class="btn btn-secondary">Edit</button></a>
+	<a href="/myLeagues"><button type="button" class="btn btn-outline-danger">Back</button></a>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid" th:fragment="myLeague">
+	<h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Leagues</li>
+    </ol>
+    <div class="card-body">
+	    <div class="table-responsive">
+	        <table class="table table-bordered" id="leagueTable" width="100%" cellspacing="0">
+	            <thead>
+	                <tr>
+	                    <th>League Name</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	                <tr>
+	                    <td></td>
+	                </tr>
+	            </tbody>
+	        </table>
+	        <div style="width:100%;text-align:center;">
+		        <a href="/createLeague"><button type="button" class="btn btn-primary">Create New</button></a>
+		        <a href="/joinLeague"><button type="button" class="btn btn-warning">Join Existing</button></a>
+	        </div>
+	    </div>
+	</div>
+</div>

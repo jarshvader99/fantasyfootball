@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fantasy Football</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3 th:inline="text">Welcome [[${user.username}]]</h3>
+		<form th:action="@{/logout}" method="post">
+	    	<input type="submit" value="Logout" />
+		</form>
+	<ul>
+		<li><a href="/schedules?year=2020">2020 Season Schedule</a></li>
+		<li><a href="/players?playerId=732">Matt Ryan</a></li>
+		<li><a href="/players?team=KC">KC Chiefs Players</a></li>
+		<li><a href="/news">Latest NFL Headlines</a></li>
+		<li><a href="/createLeague">Create a league</a></li>
+		<li><a href="/myLeagues">My leagues</a></li>
+	</ul>
+</body>
+</html>
+
+
+<div th:insert="navigation :: navigation"></div>

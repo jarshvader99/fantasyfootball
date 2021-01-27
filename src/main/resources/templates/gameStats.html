@@ -1,0 +1,41 @@
+<div class="container-fluid" th:fragment="gameStats">
+	<h1 class="mt-4">Stats</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/">Home</a> >Stats</li>
+    </ol>
+    <div class="row">
+	    <div class="card-body">
+		    <div class="table-responsive">
+		        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+		            <thead>
+		                <tr>
+		                	<th>Date</th>
+		                	<th>Team</th>
+		                	<th>Pass Yards</th>
+		                    <th>Rush Yards</th>
+		                    <th>Score</th>
+		                </tr>
+		            </thead>
+		            <tfoot>
+		                <tr>
+		                	<th>Date</th>
+		                	<th>Team</th>
+		                	<th>Pass Yards</th>
+		                    <th>Rush Yards</th>
+		                    <th>Score</th>
+		                </tr>
+		            </tfoot>
+		            <tbody th:each="stat : ${gameStats}">
+		                <tr>
+		                    <td th:text="${stat.date}"></td>
+		                    <td th:text="${stat.teamName}"></td>
+		                    <td th:text="${stat.rushingYards}"></td>
+		                    <td th:text="${stat.passingYards}"></td>
+		                    <td th:text="${stat.touchdowns}"></td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		</div>
+    </div>
+</div>

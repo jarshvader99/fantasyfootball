@@ -1,0 +1,32 @@
+<div class="container-fluid" th:fragment="home">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Home</li>
+    </ol>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-newspaper mr-1"></i>
+                    News
+                </div>
+                <div class="card-body">
+                <p><a href="/export">Export To Zip</a></p>
+                <p><a href="/writeToCSV">Write to CSV</a></p>
+                <p><a href="/getAuthToken">Log in to Movie DB</a></p>
+                <p><a th:href="'/logoutOfMovieDB?session_id=' + ${sessionId}">Log out of Movie DB</a></p>
+                <p th:text="${sessionId}">1</p>
+<!--                 	<span th:each="news : ${headlines}"> -->
+<!-- 					    <a th:href="${news.url}" target="_blank"><p th:text="${news.title}">1</p></a> -->
+<!-- 					<hr>  -->
+<!-- 					</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+</script>

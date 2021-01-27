@@ -1,0 +1,54 @@
+<div class="container-fluid" th:fragment="createLeague">
+	<h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item "><a href="/">Home</a></li>
+        <li class="breadcrumb-item "><a href="/myLeagues">Leagues</a></li>
+        <li class="breadcrumb-item active">Create New</li>
+    </ol>	
+	<form action="#" th:object="${addLeagueForm}" th:action="@{/addLeague}" method="post">
+	    <label>League name:</label>
+		<input type="text" th:field="*{league_name}" /><br/>
+		<label>Number of Teams:</label>
+		<select th:field="*{num_teams_in_league}" id="num-teams-in-league" name="*{num_teams_in_league}">
+		    <option value="10">10</option>
+		    <option value="11">11</option>
+		    <option value="12">12</option>
+		    <option value="13">13</option>
+		    <option value="14">14</option>
+		    <option value="15">15</option>
+		    <option value="16">16</option>
+		    <option value="17">17</option>
+		    <option value="18">18</option>
+		    <option value="19">19</option>
+		    <option value="20">20</option>
+		</select></br>
+		<label>Scoring Type:</label>
+		<select th:field="*{scoring_type}" id="scoring-type" name="*{scoring_type}">
+		    <option value="ppr">Point Per Reception (PPR)</option>
+		    <option value="auc">Auction League</option>
+		    <option value="kep">Keeper League</option>
+		    <option value="dyn">Dynasty League</option>
+		    <option value="idp">Individual Defensive PLayer (IDP)</option>
+		</select></br>
+		<label>Team Location:</label>
+		<input type="text" th:field="*{team_location}" /><br/>
+		<label>Nickname:</label>
+		<input type="text" th:field="*{nick_name}" /><br/>
+		<label>Abbreviation:</label>
+		<input type="text" th:field="*{abbreviation}" /><br/>
+		<label>Team Logo:</label>
+		<input type="text" th:field="*{team_logo}" /><br/>
+		<label>Opt In Emails:</label>
+		<input type="checkbox" th:field="*{opt_in_emails}" /><br/>
+		<label>Make League Public:</label>
+		<select th:field="*{private_league}" id="private_league" name="*{private_league}">
+		    <option value="1">Yes</option>
+		    <option value="0">No</option>
+		</select></br>
+	    <input type="submit" class="btn btn-primary" value="Create" />
+	</form>
+	
+	
+	
+	<a href="/myLeagues"><button type="button" class="btn btn-outline-danger">Cancel</button></a>
+</div>	

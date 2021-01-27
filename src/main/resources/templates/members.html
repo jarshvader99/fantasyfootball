@@ -1,0 +1,26 @@
+<div class="container-fluid" th:fragment="members">
+    <h1 class="mt-4"></h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item "><a href="/">Home</a></li>
+        <li class="breadcrumb-item "><a th:href="'/leagueDetails/' + ${league_id}">Leagues </a></li>
+        <li class="breadcrumb-item active">Members</li>
+        
+    </ol>
+	    <div class="row">
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+					<span>Username:</span>
+					<div th:each="manager : ${teamsInLeagueManagers}">
+						<span th:text="${manager}"></span>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	
+	<a th:href="'/leagueDetails/' + ${league_id}"><button type="button" class="btn btn-outline-danger">Back</button></a>
+</div>
+
+<script></script>

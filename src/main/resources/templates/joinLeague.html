@@ -1,0 +1,26 @@
+<div class="container-fluid" th:fragment="joinLeague">
+    <h1 class="mt-4">Join League</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active"><a href="/myLeagues">League </a> >Join League</li>
+    </ol>
+	    <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-link mr-1"></i>
+                    Join League
+                </div>
+                <div class="card-body">
+                	<form action="#" th:object="${joinLeagueForm}" th:action="@{/joinLeague}" method="post">
+					    <label>League Id:</label>
+						<input type="text" th:field="*{league_id}" /><br/>
+						<label>Invite Code:</label>
+						<input type="text" th:field="*{invite_code}" /><br/>
+					    <input type="submit" value="Join" />
+					</form>
+                </div>
+            </div>
+        </div>
+</div>
+<div th:if= "${refresh != null}"></div>
+
+
